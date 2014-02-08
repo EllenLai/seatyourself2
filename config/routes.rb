@@ -1,5 +1,6 @@
 Seatyourself2::Application.routes.draw do
   resources :restaurants
+  resources :guests, :only => [:new, :create]
 
   root :to => "restaurants#index"
 

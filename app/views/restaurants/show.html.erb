@@ -1,5 +1,5 @@
-<%= @restaurant[:name] %>
-	<%= link_to "Edit Restaurant", edit_restaurant_path %> |<%= link_to "Back to Restaurant", restaurants_path %></br>
+<strong><%= @restaurant[:name] %></strong>
+	<%= link_to "Edit Restaurant", edit_restaurant_path %> | <%= link_to "Back to Restaurants", restaurants_path %></br>
 
 <p><section>
   		<strong>Address: </strong><%= @restaurant[:address] %><br />
