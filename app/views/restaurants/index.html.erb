@@ -2,7 +2,7 @@
 
 
 <% @restaurants.each do |restaurant| %>
-<p style="border: 1px solid black; padding: 5px"><%= restaurant[:name] %></br>
+<p style="border: 1px solid black; padding: 5px"><%= link_to restaurant[:name], "/restaurants/#{restaurant.id}" %></br>
 <%= restaurant[:address] %></br>
 <em>Category: <%= restaurant[:category] %></em></br>
 <%= restaurant[:summary][0..50] %>...[see more]</br>

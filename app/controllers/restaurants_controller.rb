@@ -26,6 +26,16 @@ def create
   end
 
 
+def update
+	@restaurant = Restaurant.find(params[:id])
+
+	if @restaurant.update_attributes(restaurant_params)
+		redirect_to "/restaurants/#{@restaurant.id}"
+	else
+		render :edit
+	end
+end
+
  private
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :category, :summary)
