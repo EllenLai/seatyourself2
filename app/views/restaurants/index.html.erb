@@ -1,2 +1,11 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>Seat Yourself</h1>
+
+
+<% @restaurants.each do |restaurant| %>
+<p style="border: 1px solid black; padding: 5px"><%= restaurant[:name] %></br>
+<%= restaurant[:address] %></br>
+<em>Category: <%= restaurant[:category] %></em></br>
+<%= restaurant[:summary][0..50] %>...[see more]</br>
+</p>
+
+<% end %>
