@@ -1,5 +1,5 @@
 <strong><%= @restaurant[:name] %></strong>
-	<%= link_to "Edit Restaurant", edit_restaurant_path %> | <%= link_to "Back to Restaurants", restaurants_path %></br>
+	<button><%= link_to "Edit Restaurant", edit_restaurant_path %></button>  |  <button> <%= link_to "Back to Restaurants", restaurants_path %></button></br>
 
 <p><section>
   		<strong>Address: </strong><%= @restaurant[:address] %><br />
@@ -13,13 +13,13 @@
 	<%= form_for([@restaurant, @reservation]) do |f| %>
 		<div class="field">
 			<%= f.label "Reservation date" %><br />
-			<%= f.datetime_select :time, order: [:month, :day] %>
-		</div>
+			<%= f.datetime_select :time, order: [:month, :day, :year] %>
+		</div><br />
 
 		<div class="field">
 			<%= f.label :number_of_guests %><br />
 			<%= f.number_field :number_of_guests %>
-		</div>
+		</div><br />
 
 		<div class"actions">
 			<%= f.submit %>
