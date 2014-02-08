@@ -1,10 +1,15 @@
 class RestaurantsController < ApplicationController
+
   def index
   	@restaurants = Restaurant.all
   end
 
   def show
   	@restaurant = Restaurant.find(params[:id])
+
+  	if current_guest
+  		@reservation = @restaurant.reservations.build
+  	end
   end
 
   def new
@@ -30,7 +35,7 @@ def update
 	@restaurant = Restaurant.find(params[:id])
 
 	if @restaurant.update_attributes(restaurant_params)
-		redirect_to "/restaurants/#{@restaurant.id}"
+		redirect_to restaurant_path(@restaurant)
 	else
 		render :edit
 	end

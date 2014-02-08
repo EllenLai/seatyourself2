@@ -7,3 +7,23 @@
   		<strong>Summary: </strong><%= @restaurant[:summary] %><br />
 </section></p>
 
+<% if current_guest %>
+<div class="reservation">
+	<h3> Reservations</h3>
+	<%= form_for([@restaurant, @reservation]) do |f| %>
+		<div class="field">
+			<%= f.label "Reservation date" %><br />
+			<%= f.datetime_select :time, order: [:month, :day] %>
+		</div>
+
+		<div class="field">
+			<%= f.label :number_of_guests %><br />
+			<%= f.number_field :number_of_guests %>
+		</div>
+
+		<div class"actions">
+			<%= f.submit %>
+		</div>
+
+	<% end %>
+	<% end %>
