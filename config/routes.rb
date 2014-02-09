@@ -4,7 +4,11 @@ Seatyourself2::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :restaurants do
-    resources :reservations, :except => [:index]
+    resources :reservations
+  end
+
+  resources :guests do
+    resources :reservations
   end
 
   root :to => "restaurants#index"

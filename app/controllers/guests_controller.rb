@@ -1,6 +1,14 @@
 class GuestsController < ApplicationController
+before_filter :ensure_logged_in, :only => [:show]
+
   def new
   	@guest = Guest.new
+  end
+
+
+  def show
+    @guest = Guest.find(params[:id])
+
   end
 
   def create

@@ -8,6 +8,8 @@
 </section></p>
 
 <% if current_guest %>
+
+
 <div class="reservation">
 	<h3> Reservations</h3>
 	<%= form_for([@restaurant, @reservation]) do |f| %>
@@ -26,4 +28,7 @@
 		</div>
 
 	<% end %>
+
+
+
 	<% end %>
