@@ -1,5 +1,5 @@
 <h2>Reservations</h2>
-<% @reservations.each do |r| %>
+<% current_guest.reservations.each do |r| %>
 	<strong><%= r.restaurant.name %></strong><br />
 	<em><%= r.restaurant.address %></em><br /><br />
 	<strong>Guest Name: </strong><%= r.guest.first_name %> <%= r.guest.last_name %><br />

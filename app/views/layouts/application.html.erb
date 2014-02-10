@@ -8,16 +8,17 @@
 </head>
 <body>
 
-<%= yield %>
 
-<p class="guestinfo">
+
+<div class="guestinfo">
 	<% if current_guest %>
 		Signed in as <%= current_guest.email %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
 		<% else %>
 			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_guest_path %>
 		<% end %>
-	</p>
+	</div>
 
+<%= yield %>
 
 </body>
 </html>

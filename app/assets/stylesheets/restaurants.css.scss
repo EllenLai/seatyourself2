@@ -11,6 +11,8 @@
 .border {
 	border-top: 2px solid black;
 	margin: 20px 0 20px 0;
+	padding-left: 9px;
+	padding: 5px;
 }
 
 .wrap {
@@ -21,9 +23,11 @@
 .box {
 	border: 1px solid black;
 	padding: 5px;
-	margin: 15px
+	padding-left: 9px;
+	margin: 15px 0;
 }
 
 .box:hover {
-	border-left: 4px solid blue;
+	border-left: 4px solid orange;
+	padding-left: 6px;
 }
