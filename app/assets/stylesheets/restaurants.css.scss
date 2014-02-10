@@ -1,3 +1,29 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reservation {
+	font-family: 'Happy Monkey', cursive;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.border {
+	border-top: 2px solid black;
+	margin: 20px 0 20px 0;
+}
+
+.wrap {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.box {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 15px
+}
+
+.box:hover {
+	border-left: 4px solid blue;
+}

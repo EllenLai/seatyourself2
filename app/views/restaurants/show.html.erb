@@ -1,5 +1,13 @@
-<strong><%= @restaurant[:name] %></strong>
-	<button><%= link_to "Edit Restaurant", edit_restaurant_path %></button>  |  <button> <%= link_to "Back to Restaurants", restaurants_path %></button></br>
+<link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+<br>
+<strong><h3><%= @restaurant[:name] %></h3></strong><button><%= link_to "Edit Restaurant", edit_restaurant_path %></button>  |  <button> <%= link_to "Back to Restaurants", restaurants_path %></button></br>
+<br>
+
+<div class="border">
+</br>
+<img src="<%= @restaurant[:url] %>"/><br />
+
+
 
 <p><section>
   		<strong>Address: </strong><%= @restaurant[:address] %><br />
@@ -11,7 +19,7 @@
 
 
 <div class="reservation">
-	<h3> Reservations</h3>
+	<h3>Reservations</h3></div>
 	<%= form_for([@restaurant, @reservation]) do |f| %>
 		<div class="field">
 			<%= f.label "Reservation date" %><br />
