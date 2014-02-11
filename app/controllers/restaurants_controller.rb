@@ -42,6 +42,8 @@ def update
 	end
 end
 
+
+
  private
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :category, :summary, :url)

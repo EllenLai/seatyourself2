@@ -22,7 +22,7 @@
 	<%= form_for([@restaurant, @reservation]) do |f| %>
 		<div class="field">
 			<%= f.label "Reservation date" %><br />
-			<%= f.datetime_select :time, order: [:month, :day, :year] %>
+			<%= f.select :time, @restaurant.time_slots.map{ |dt| [nice_datetime(dt), dt] } %>
 		</div><br />
 
 		<div class="field">
