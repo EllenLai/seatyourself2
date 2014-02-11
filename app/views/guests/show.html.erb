@@ -1,3 +1,17 @@
+<br />
+<h1>Welcome, <%= @guest[:first_name].capitalize %>!</h1><br />
 
-<h1>Welcome, <%= @guest[:first_name] %>!</h1>
+<h2>Here are your upcoming reservations:</h2>
 
+<br/>
+
+<% current_guest.reservations.each do |r| %>
+	<strong><%= r.restaurant.name %></strong><br />
+	<em><%= r.restaurant.address %></em><br />
+	<strong>Date & Time: </strong><%= r.time %><br />
+	<strong>Number of Guests:</strong> <%= r.number_of_guests %><br /><br />
+
+
+	<% end %>
+
+<button><%= link_to "Back to Restaurants", restaurants_path %></button>

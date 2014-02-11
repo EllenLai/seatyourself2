@@ -1,4 +1,20 @@
 <%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <br><br><h2>You have <%= pluralize(@restaurant.errors.count, "error") %>.</h2><br />
+      	<h4>This restaurant cannot be saved because:</h4>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <% end %>
+
+<%= form_for(@restaurant) do |f| %>
 
 <div class="field">
 	<%= f.label :name %><br />

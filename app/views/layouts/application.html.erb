@@ -12,13 +12,17 @@
 
 <div class="guestinfo">
 	<% if current_guest %>
-		Signed in as <%= current_guest.email %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
-		<% else %>
-			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_guest_path %>
-		<% end %>
-	</div>
+	Signed in as <%= current_guest.first_name.capitalize %> | <%= link_to "My Profile", guest_path(current_guest) %> | <%= link_to "Log out", session_path("current"), :method => :delete %></br>
+  	<% else %>
+  		<%= link_to "Log in", new_session_path %>	or <%= link_to "Sign up", new_guest_path %>
+  	<% end %>
+  </div>
+
+
 
 <%= yield %>
+
+ <%= params %>
 
 </body>
 </html>
